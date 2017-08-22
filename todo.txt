@@ -1,0 +1,4 @@
+TODO:
+[*]Optimize low-priced and high-priced hats price decision
+[*]Make bot read spaces in hat names
+[*]Icon :^)
