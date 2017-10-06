@@ -72,7 +72,7 @@ def decide():
     for i in range(lines):
         dif[i] = pricelist[i]
         if i == 0: #key
-            if pricelist[i] > 32:  #keys price peak -- 32.33 ref
+            if pricelist[i] > 35:  #keys price peak -- 35 ref (CAN WE PLEASE STAHP? PLEASE? PLEEEEEEEASE? (c)Morty )
                 pricelist[i] -= prandom(pricelist[i], 2, 6, 0)
             elif pricelist[i] < 5: #(ME LITERALLY CRYING ABOUT TF2 KEY PRICE IN REF)
                 pricelist[i] -= prandom(pricelist[i], 2, 3, 1)
@@ -115,14 +115,33 @@ def decide():
                 dif[i] -= pricelist[i]
                 dif[i] = -round(dif[i],2)
             if curlist[i] == 'keys': #key items
-                a = r.randint(0, 10)
-                if a <= 3:
-                    pricelist[i] -= 0.1
-                elif a >= 8:
-                    pricelist[i] += 0.1
-                pricelist[i] = round(pricelist[i],1)
-                dif[i] -= pricelist[i]
-                dif[i] = -round(dif[i],1)
+                if pricelist[i] > 10 and pricelist[i] < 30:
+                    pricelist[i] = round(pricelist[i])
+                    a = r.randint(0, 15)
+                    if a <= 4:
+                        pricelist[i] += r.randint(1, 3)
+                    elif a > 11:
+                        pricelist[i] -= r.randint(1, 2)
+                    dif[i] -= pricelist[i]
+                    dif[i] = -round(dif[i])
+                elif pricelist[i] > 30:
+                    pricelist[i] = round(pricelist[i])
+                    a = r.randint(0, 15)
+                    if a <= 3:
+                        pricelist[i] += r.randint(2, 15)
+                    elif a > 12:
+                        pricelist[i] -= r.randint(2, 10)
+                    dif[i] -= pricelist[i]
+                    dif[i] = -round(dif[i])
+                else:
+                    a = r.randint(0, 10)
+                    if a <= 3:
+                        pricelist[i] -= 0.1
+                    elif a >= 8:
+                        pricelist[i] += 0.1
+                    pricelist[i] = round(pricelist[i],1)
+                    dif[i] -= pricelist[i]
+                    dif[i] = -round(dif[i],1)
             #CONVERT REF TO KEYS AND KEYS TO REF
             for i in range(lines):
                 if pricelist[i] > pricelist[0] and curlist[i] == 'ref':
