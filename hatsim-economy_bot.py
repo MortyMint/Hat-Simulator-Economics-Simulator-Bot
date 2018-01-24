@@ -1,4 +1,3 @@
-#import os
 import random as r
 import time
 
@@ -37,13 +36,13 @@ def readtext():
         if i != lines-1:
             raw = raw[0:-1]
         Qname = ''
-        j = 0
-        while raw[j] != ' ':
+        j = 1
+        while raw[j] != '"':
             Qname += raw[j]
             j += 1
         namelist.append(Qname)
         Qname = ''
-        j += 1
+        j += 2
         while raw[j] != ' ':
             Qname += raw[j]
             j += 1
@@ -173,9 +172,9 @@ def rewrite():
     file.truncate()
     for i in range(lines):
         if i != lines-1:
-            file.write(namelist[i]+' '+str(pricelist[i])+' '+curlist[i]+'\n')
+            file.write('"'+namelist[i]+'" '+ str(pricelist[i]) + ' ' + curlist[i]+'\n')
         else:
-            file.write(namelist[i] + ' ' + str(pricelist[i]) + ' ' + curlist[i])
+            file.write('"'+namelist[i]+'" '+ str(pricelist[i]) + ' ' + curlist[i])
     file.close()
 
 timefile = open('time.txt','r')
@@ -184,7 +183,7 @@ lines = readlines(lines)
 readtext()
 show()
 while True:
-    time.sleep(tick)
+    time.sleep(2)
     decide()
     show()
     rewrite()
