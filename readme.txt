@@ -9,4 +9,4 @@ Then type amount of time (in seconds) in time.txt
 Run bot.exe and leave it somewhere at the background (get it from dropbox)
 Have fun :^)
 
-Github unique hint: Compile it or get it here: https://www.dropbox.com/s/rl3pl7p749nkarm/HSESB.rar?dl=0 :^)
+Github unique hint: Compile it or get it here: https://www.dropbox.com/s/t7xu51hkoafdpci/HSESB.zip?dl=0 :^)
